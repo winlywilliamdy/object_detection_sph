@@ -1,0 +1,91 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter run --debug
+
+## exception
+
+FileSystemException: FileSystemException: Creation of temporary directory failed, path = '/tmp/flutter_tools.MGUXEB/flutter_tool.' (OS Error: No space left on device, errno = 28)
+
+```
+#0      _Directory.createTempSync (dart:io/directory_impl.dart:175:7)
+#1      ForwardingDirectory.createTempSync (package:file/src/forwarding/forwarding_directory.dart:28:21)
+#2      new ResidentRunner (package:flutter_tools/src/resident_runner.dart:1075:44)
+#3      new HotRunner (package:flutter_tools/src/run_hot.dart:101:8)
+#4      RunCommand.createRunner (package:flutter_tools/src/commands/run.dart:530:14)
+<asynchronous suspension>
+#5      RunCommand.runCommand (package:flutter_tools/src/commands/run.dart:680:35)
+<asynchronous suspension>
+#6      FlutterCommand.run.<anonymous closure> (package:flutter_tools/src/runner/flutter_command.dart:1257:27)
+<asynchronous suspension>
+#7      AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:150:19)
+<asynchronous suspension>
+#8      CommandRunner.runCommand (package:args/command_runner.dart:209:13)
+<asynchronous suspension>
+#9      FlutterCommandRunner.runCommand.<anonymous closure> (package:flutter_tools/src/runner/flutter_command_runner.dart:283:9)
+<asynchronous suspension>
+#10     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:150:19)
+<asynchronous suspension>
+#11     FlutterCommandRunner.runCommand (package:flutter_tools/src/runner/flutter_command_runner.dart:229:5)
+<asynchronous suspension>
+#12     run.<anonymous closure>.<anonymous closure> (package:flutter_tools/runner.dart:64:9)
+<asynchronous suspension>
+#13     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:150:19)
+<asynchronous suspension>
+#14     main (package:flutter_tools/executable.dart:91:3)
+<asynchronous suspension>
+```
+
+## flutter doctor
+
+```
+[32m[✓][39m Flutter (Channel stable, 3.7.5, on Ubuntu 22.04.1 LTS 5.19.0-42-generic, locale en_US.UTF-8)
+    [32m•[39m Flutter version 3.7.5 on channel stable at /home/it/snap/flutter/common/flutter
+    [32m•[39m Upstream repository https://github.com/flutter/flutter.git
+    [32m•[39m Framework revision c07f788888 (3 months ago), 2023-02-22 17:52:33 -0600
+    [32m•[39m Engine revision 0f359063c4
+    [32m•[39m Dart version 2.19.2
+    [32m•[39m DevTools version 2.20.1
+
+[33m[!][39m Android toolchain - develop for Android devices (Android SDK version 33.0.0)
+    [32m•[39m Android SDK at /home/it/Android/Sdk
+    [31m✗[39m cmdline-tools component is missing
+      Run `path/to/sdkmanager --install "cmdline-tools;latest"`
+      See https://developer.android.com/studio/command-line for more details.
+    [31m✗[39m Android license status unknown.
+      Run `flutter doctor --android-licenses` to accept the SDK licenses.
+      See https://flutter.dev/docs/get-started/install/linux#android-setup for more details.
+
+[32m[✓][39m Chrome - develop for the web
+    [32m•[39m Chrome at google-chrome
+
+[32m[✓][39m Linux toolchain - develop for Linux desktop
+    [32m•[39m clang version 10.0.0-4ubuntu1
+    [32m•[39m cmake version 3.16.3
+    [32m•[39m ninja version 1.10.0
+    [32m•[39m pkg-config version 0.29.1
+
+[32m[✓][39m Android Studio (version 2021.2)
+    [32m•[39m Android Studio at /opt/android-studio
+    [32m•[39m Flutter plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/9212-flutter
+    [32m•[39m Dart plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/6351-dart
+    [32m•[39m Java version    361544
+
+[32m[✓][39m VS Code
+    [32m•[39m VS Code at /snap/code/current
+    [32m•[39m Flutter extension version 3.64.0
+
+[32m[✓][39m Connected device (3 available)
+    [32m•[39m SM X200 (mobile) • R9RTB02LGGW • android-arm64  • Android 13 (API 33)
+    [32m•[39m Linux (desktop)  • linux       • linux-x64      • Ubuntu 22.04.1 LTS 5.19.0-42-generic
+    [32m•[39m Chrome (web)     • chrome      • web-javascript • Google Chrome 112.0.5615.121
+
+[32m[✓][39m HTTP Host Availability
+    [32m•[39m All required HTTP hosts are available
+
+[33m![39m Doctor found issues in 1 category.
+```
